@@ -43,6 +43,8 @@ use Lisk\Api\Blocks\GetTotalSupplyRequest;
 use Lisk\Api\Blocks\GetTotalSupplyResponse;
 use Lisk\Api\Delegate\CreateDelegateRequest;
 use Lisk\Api\Delegate\CreateDelegateResponse;
+use Lisk\Api\Delegate\GetDelegateCountRequest;
+use Lisk\Api\Delegate\GetDelegateCountResponse;
 use Lisk\Api\Delegate\GetDelegateListRequest;
 use Lisk\Api\Delegate\GetDelegateListResponse;
 use Lisk\Api\Delegate\SearchDelegateRequest;
@@ -343,15 +345,22 @@ class Client
         );
     }
 
-    public function getDelegateList($limit =null, $offset = null, $orderBy = null){
+    public function getDelegateList($limit = null, $offset = null, $orderBy = null)
+    {
         return new GetDelegateListResponse($this->client->query(
-            new GetDelegateListRequest($limit , $offset , $orderBy ))
+            new GetDelegateListRequest($limit, $offset, $orderBy))
         );
     }
 
-    public function searchDelegate($username =null, $orderBy = null){
+    public function searchDelegate($username = null, $orderBy = null)
+    {
         return new SearchDelegateResponse($this->client->query(
-            new SearchDelegateRequest($username , $orderBy ))
+            new SearchDelegateRequest($username, $orderBy))
         );
+    }
+
+    public function getDelegateCount()
+    {
+        return new GetDelegateCountResponse($this->client->query(new GetDelegateCountRequest()));
     }
 }

@@ -26,6 +26,7 @@ use Lisk\Cli\Blocks\GetBlocks;
 use Lisk\Cli\Blocks\GetStatusInfos;
 use Lisk\Cli\Blocks\GetTotalSupply;
 use Lisk\Cli\Delegate\CreateDelegate;
+use Lisk\Cli\Delegate\GetDelegateCount;
 use Lisk\Cli\Delegate\GetDelegateList;
 use Lisk\Cli\Delegate\SearchDelegate;
 use Lisk\Cli\Loader\BlockStatus;
@@ -126,6 +127,8 @@ class ActionFactory
                 return new GetDelegateList();
             case "searchDelegate";
                 return new SearchDelegate();
+            case "getDelegateCount":
+                return new GetDelegateCount();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }
