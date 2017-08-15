@@ -47,6 +47,7 @@ use Lisk\Api\Delegate\GetDelegateCountRequest;
 use Lisk\Api\Delegate\GetDelegateCountResponse;
 use Lisk\Api\Delegate\GetDelegateListRequest;
 use Lisk\Api\Delegate\GetDelegateListResponse;
+use Lisk\Api\Delegate\GetDelegateVotersRequest;
 use Lisk\Api\Delegate\GetDelegateVotesRequest;
 use Lisk\Api\Delegate\GetDelegateVotesResponse;
 use Lisk\Api\Delegate\SearchDelegateRequest;
@@ -78,6 +79,7 @@ use Lisk\Api\Transaction\ListUnconfirmedTransactionsRequest;
 use Lisk\Api\Transaction\ListUnconfirmedTransactionsResponse;
 use Lisk\Api\Transaction\SendTransactionRequest;
 use Lisk\Api\Transaction\SendTransactionResponse;
+use Lisk\Cli\Delegate\GetDelegateVoters;
 use Lisk\Requestor\TcdentClient;
 
 class Client
@@ -369,5 +371,11 @@ class Client
     public function getDelegateVotes($address)
     {
         return new GetDelegateVotesResponse($this->client->query(new GetDelegateVotesRequest($address)));
+    }
+
+
+    public function getDelegateVoters($publicKey)
+    {
+        return new GetDelegateVotersRequest($this->client->query(new GetDelegateVotersRequest($publicKey)));
     }
 }

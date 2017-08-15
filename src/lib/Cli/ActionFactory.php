@@ -28,6 +28,7 @@ use Lisk\Cli\Blocks\GetTotalSupply;
 use Lisk\Cli\Delegate\CreateDelegate;
 use Lisk\Cli\Delegate\GetDelegateCount;
 use Lisk\Cli\Delegate\GetDelegateList;
+use Lisk\Cli\Delegate\GetDelegateVoters;
 use Lisk\Cli\Delegate\GetDelegateVotes;
 use Lisk\Cli\Delegate\SearchDelegate;
 use Lisk\Cli\Loader\BlockStatus;
@@ -132,6 +133,8 @@ class ActionFactory
                 return new GetDelegateCount();
             case "getDelegateVotes":
                 return new GetDelegateVotes();
+            case "getDelegateVoters":
+                return new GetDelegateVoters();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }
