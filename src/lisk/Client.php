@@ -45,6 +45,8 @@ use Lisk\Api\Delegate\CreateDelegateRequest;
 use Lisk\Api\Delegate\CreateDelegateResponse;
 use Lisk\Api\Delegate\GetDelegateListRequest;
 use Lisk\Api\Delegate\GetDelegateListResponse;
+use Lisk\Api\Delegate\SearchDelegateRequest;
+use Lisk\Api\Delegate\SearchDelegateResponse;
 use Lisk\Api\Loader\BlockStatusRequest;
 use Lisk\Api\Loader\BlockStatusResponse;
 use Lisk\Api\Loader\LoadingStatusRequest;
@@ -344,6 +346,12 @@ class Client
     public function getDelegateList($limit =null, $offset = null, $orderBy = null){
         return new GetDelegateListResponse($this->client->query(
             new GetDelegateListRequest($limit , $offset , $orderBy ))
+        );
+    }
+
+    public function searchDelegate($username =null, $orderBy = null){
+        return new SearchDelegateResponse($this->client->query(
+            new SearchDelegateRequest($username , $orderBy ))
         );
     }
 }
