@@ -54,3 +54,22 @@ And many many functions more.... [ToBeDocumented]
 If you want to support me please consider voting for my lisk delegate
 - **pelops** (6669300595452632273L) on MainNet
 - **pelops_testnet** (3697531586899904038L) on TestNet
+
+
+##License
+License under GNU General Public License v3.0
+
+Copyright (c) 2017  Marcus Puchalla <cb0@0xcb0.com>
+
+LiskPhp is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+LiskPhp is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with LiskPhp.  If not, see <http://www.gnu.org/licenses/>.
