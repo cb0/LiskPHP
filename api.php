@@ -39,7 +39,7 @@ $options = $argumentsList;
 $factory = new \Lisk\Cli\ActionFactory();
 
 try {
-    $client = new \Lisk\Client('http://139.162.204.5:7000');
+    $client = new \Lisk\Client('http://testnet.lisk.io:7000');
     $action = $factory->create($actionName);
     $result = $action->call($client, $options);
     var_dump($result);
