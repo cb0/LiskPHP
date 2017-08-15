@@ -54,6 +54,8 @@ use Lisk\Api\Delegate\GetDelegateListResponse;
 use Lisk\Api\Delegate\GetDelegateVotersRequest;
 use Lisk\Api\Delegate\GetDelegateVotesRequest;
 use Lisk\Api\Delegate\GetDelegateVotesResponse;
+use Lisk\Api\Delegate\GetForgedByAccountRequest;
+use Lisk\Api\Delegate\GetForgedByAccountResponse;
 use Lisk\Api\Delegate\SearchDelegateRequest;
 use Lisk\Api\Delegate\SearchDelegateResponse;
 use Lisk\Api\Loader\BlockStatusRequest;
@@ -83,7 +85,6 @@ use Lisk\Api\Transaction\ListUnconfirmedTransactionsRequest;
 use Lisk\Api\Transaction\ListUnconfirmedTransactionsResponse;
 use Lisk\Api\Transaction\SendTransactionRequest;
 use Lisk\Api\Transaction\SendTransactionResponse;
-use Lisk\Cli\Delegate\GetDelegateVoters;
 use Lisk\Requestor\TcdentClient;
 
 class Client
@@ -391,5 +392,11 @@ class Client
     public function disableForging($secret)
     {
         return new DisableForgingResponse($this->client->query(new DisableForgingRequest($secret)));
+    }
+
+    public function getForgedByAccount($generatorPublicKey, $start = null, $end = null)
+    {
+        return new GetForgedByAccountResponse($this->client->query(
+            new GetForgedByAccountRequest($generatorPublicKey,$start, $end)));
     }
 }

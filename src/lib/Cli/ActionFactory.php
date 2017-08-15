@@ -9,6 +9,7 @@
 namespace Lisk\Cli;
 
 
+use Lisk\Api\Delegate\GetForgedByAccountRequest;
 use Lisk\Cli\Account\Balance;
 use Lisk\Cli\Account\Delegates;
 use Lisk\Cli\Account\GeneratePublicKey;
@@ -32,6 +33,7 @@ use Lisk\Cli\Delegate\GetDelegateCount;
 use Lisk\Cli\Delegate\GetDelegateList;
 use Lisk\Cli\Delegate\GetDelegateVoters;
 use Lisk\Cli\Delegate\GetDelegateVotes;
+use Lisk\Cli\Delegate\GetForgedByAccount;
 use Lisk\Cli\Delegate\SearchDelegate;
 use Lisk\Cli\Loader\BlockStatus;
 use Lisk\Cli\Loader\LoadingStatus;
@@ -141,6 +143,8 @@ class ActionFactory
                 return new EnableForging();
             case "disableForging":
                 return new DisableForging();
+            case "getForgedByAccount":
+                return new GetForgedByAccount();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }

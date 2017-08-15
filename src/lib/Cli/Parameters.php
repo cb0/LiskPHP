@@ -54,6 +54,9 @@ class Parameters
 
     const DELEGATE_USERNAME = 'username';
 
+    const START = 'start';
+    const END = 'end';
+
     public static $descriptions = [
         self::ADDRESS => "Address of account",
         self::SECRET => "Secret key of account",
@@ -86,8 +89,8 @@ class Parameters
         self::BLOCKSIGNATURE => 'Block signature. Hex',
         self::CONFIRMATIONS => 'Block confirmations. Integer',
         self::TOTALFORGED => 'Total block forged. Integer',
-        self::DELEGATE_USERNAME => 'Username of delegate. String from 1 to 20 characters.'
-
-
+        self::DELEGATE_USERNAME => 'Username of delegate. String from 1 to 20 characters.',
+        self::START => 'Sets the start time of the search - timestamp UNIX time. (String)',
+        self::END => 'Sets the endtime of the search - timestamp UNIX time. (String)'
     ];
 }
