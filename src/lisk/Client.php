@@ -47,6 +47,8 @@ use Lisk\Api\Delegate\GetDelegateCountRequest;
 use Lisk\Api\Delegate\GetDelegateCountResponse;
 use Lisk\Api\Delegate\GetDelegateListRequest;
 use Lisk\Api\Delegate\GetDelegateListResponse;
+use Lisk\Api\Delegate\GetDelegateVotesRequest;
+use Lisk\Api\Delegate\GetDelegateVotesResponse;
 use Lisk\Api\Delegate\SearchDelegateRequest;
 use Lisk\Api\Delegate\SearchDelegateResponse;
 use Lisk\Api\Loader\BlockStatusRequest;
@@ -362,5 +364,10 @@ class Client
     public function getDelegateCount()
     {
         return new GetDelegateCountResponse($this->client->query(new GetDelegateCountRequest()));
+    }
+
+    public function getDelegateVotes($address)
+    {
+        return new GetDelegateVotesResponse($this->client->query(new GetDelegateVotesRequest($address)));
     }
 }
