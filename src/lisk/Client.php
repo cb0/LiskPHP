@@ -43,6 +43,8 @@ use Lisk\Api\Blocks\GetTotalSupplyRequest;
 use Lisk\Api\Blocks\GetTotalSupplyResponse;
 use Lisk\Api\Delegate\CreateDelegateRequest;
 use Lisk\Api\Delegate\CreateDelegateResponse;
+use Lisk\Api\Delegate\DisableForgingRequest;
+use Lisk\Api\Delegate\DisableForgingResponse;
 use Lisk\Api\Delegate\EnableForgingRequest;
 use Lisk\Api\Delegate\EnableForgingResponse;
 use Lisk\Api\Delegate\GetDelegateCountRequest;
@@ -384,5 +386,10 @@ class Client
     public function enableForging($secret)
     {
         return new EnableForgingResponse($this->client->query(new EnableForgingRequest($secret)));
+    }
+
+    public function disableForging($secret)
+    {
+        return new DisableForgingResponse($this->client->query(new DisableForgingRequest($secret)));
     }
 }
