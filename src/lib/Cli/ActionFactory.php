@@ -26,6 +26,7 @@ use Lisk\Cli\Blocks\GetBlocks;
 use Lisk\Cli\Blocks\GetStatusInfos;
 use Lisk\Cli\Blocks\GetTotalSupply;
 use Lisk\Cli\Delegate\CreateDelegate;
+use Lisk\Cli\Delegate\EnableForging;
 use Lisk\Cli\Delegate\GetDelegateCount;
 use Lisk\Cli\Delegate\GetDelegateList;
 use Lisk\Cli\Delegate\GetDelegateVoters;
@@ -135,6 +136,8 @@ class ActionFactory
                 return new GetDelegateVotes();
             case "getDelegateVoters":
                 return new GetDelegateVoters();
+            case "enableForging":
+                return new EnableForging();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }

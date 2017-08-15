@@ -43,6 +43,8 @@ use Lisk\Api\Blocks\GetTotalSupplyRequest;
 use Lisk\Api\Blocks\GetTotalSupplyResponse;
 use Lisk\Api\Delegate\CreateDelegateRequest;
 use Lisk\Api\Delegate\CreateDelegateResponse;
+use Lisk\Api\Delegate\EnableForgingRequest;
+use Lisk\Api\Delegate\EnableForgingResponse;
 use Lisk\Api\Delegate\GetDelegateCountRequest;
 use Lisk\Api\Delegate\GetDelegateCountResponse;
 use Lisk\Api\Delegate\GetDelegateListRequest;
@@ -377,5 +379,10 @@ class Client
     public function getDelegateVoters($publicKey)
     {
         return new GetDelegateVotersRequest($this->client->query(new GetDelegateVotersRequest($publicKey)));
+    }
+
+    public function enableForging($secret)
+    {
+        return new EnableForgingResponse($this->client->query(new EnableForgingRequest($secret)));
     }
 }

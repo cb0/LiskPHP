@@ -20,9 +20,8 @@ abstract class AbstractResponse
 
         if ($this->isSuccess()) {
             $this->success($response);
-//            $this->block = (new Block())->fromArray($jsonResponse['blocks']);
         } else {
-            throw new \Exception($this->getError());
+            throw new \Exception($response['error'] ?? "unknown error");
         }
 
         if ($this->success === false) {
