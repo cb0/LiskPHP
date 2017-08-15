@@ -56,6 +56,8 @@ use Lisk\Api\Delegate\GetDelegateVotesRequest;
 use Lisk\Api\Delegate\GetDelegateVotesResponse;
 use Lisk\Api\Delegate\GetForgedByAccountRequest;
 use Lisk\Api\Delegate\GetForgedByAccountResponse;
+use Lisk\Api\Delegate\GetNextForgerRequest;
+use Lisk\Api\Delegate\GetNextForgerResponse;
 use Lisk\Api\Delegate\SearchDelegateRequest;
 use Lisk\Api\Delegate\SearchDelegateResponse;
 use Lisk\Api\Loader\BlockStatusRequest;
@@ -397,6 +399,12 @@ class Client
     public function getForgedByAccount($generatorPublicKey, $start = null, $end = null)
     {
         return new GetForgedByAccountResponse($this->client->query(
-            new GetForgedByAccountRequest($generatorPublicKey,$start, $end)));
+            new GetForgedByAccountRequest($generatorPublicKey, $start, $end)));
+    }
+
+
+    public function getNextForger($limit = null)
+    {
+        return new GetNextForgerResponse($this->client->query(new GetNextForgerRequest($limit)));
     }
 }

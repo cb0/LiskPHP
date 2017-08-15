@@ -34,6 +34,7 @@ use Lisk\Cli\Delegate\GetDelegateList;
 use Lisk\Cli\Delegate\GetDelegateVoters;
 use Lisk\Cli\Delegate\GetDelegateVotes;
 use Lisk\Cli\Delegate\GetForgedByAccount;
+use Lisk\Cli\Delegate\GetNextForger;
 use Lisk\Cli\Delegate\SearchDelegate;
 use Lisk\Cli\Loader\BlockStatus;
 use Lisk\Cli\Loader\LoadingStatus;
@@ -145,6 +146,8 @@ class ActionFactory
                 return new DisableForging();
             case "getForgedByAccount":
                 return new GetForgedByAccount();
+            case "getNextForger":
+                return new GetNextForger();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }
