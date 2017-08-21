@@ -36,6 +36,8 @@ use Lisk\Api\Apps\GetAppRequest;
 use Lisk\Api\Apps\GetAppResponse;
 use Lisk\Api\Apps\GetAppsRequest;
 use Lisk\Api\Apps\GetAppsResponse;
+use Lisk\Api\Apps\InstallAppRequest;
+use Lisk\Api\Apps\InstallAppResponse;
 use Lisk\Api\Apps\RegisterAppRequest;
 use Lisk\Api\Apps\RegisterAppResponse;
 use Lisk\Api\Apps\SearchAppsRequest;
@@ -512,5 +514,15 @@ class Client
     public function searchApps($q = null, $category = null, $installed = null)
     {
         return new SearchAppsResponse($this->client->query(new SearchAppsRequest($q, $category, $installed)));
+    }
+
+    /**
+     * ToDo: Not working with error message "Error: Invalid master passphrase"
+     * @param $id
+     * @return InstallAppResponse
+     */
+    public function installApp($id)
+    {
+        return new InstallAppResponse($this->client->query(new InstallAppRequest($id)));
     }
 }

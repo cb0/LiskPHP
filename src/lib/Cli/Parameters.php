@@ -32,6 +32,7 @@ class Parameters
     const SENDERID = 'senderId';
     const RECIPIENTID = 'recipientId';
     const ID = 'id';
+    const APPLICATIONID='id';
 
     const LIMIT = 'limit';
     const OFFSET = 'offset';
@@ -122,6 +123,7 @@ class Parameters
         self::LINK => 'Link to DApp file. ZIP supported. String. Required',
         self::ICON => 'Link to icon file. PNG and JPG/JPEG supported. String. Optional',
         self::SEARCHCRITERIA => 'Search criteria. (String)',
-        self::INSTALLED => 'Search installed apps only. 1 or 0. (Integer)'
+        self::INSTALLED => 'Search installed apps only. 1 or 0. (Integer)',
+        self::APPLICATIONID => 'Blockchain Application id to install'
     ];
 }

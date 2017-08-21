@@ -28,6 +28,7 @@ use Lisk\Cli\Account\Open;
 use Lisk\Cli\Account\VoteDelegates;
 use Lisk\Cli\Apps\GetApp;
 use Lisk\Cli\Apps\GetApps;
+use Lisk\Cli\Apps\InstallApp;
 use Lisk\Cli\Apps\RegisterApp;
 use Lisk\Cli\Apps\SearchApps;
 use Lisk\Cli\Blocks\GetBlock;
@@ -171,6 +172,8 @@ class ActionFactory
                 return new GetApp();
             case 'searchApps':
                 return new SearchApps();
+            case 'installApp':
+                return new InstallApp();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }

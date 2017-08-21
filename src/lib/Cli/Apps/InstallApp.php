@@ -24,7 +24,7 @@ use Lisk\Cli\AbstractCliAction;
 use Lisk\Cli\Parameters;
 use Lisk\Client;
 
-class GetApps extends AbstractCliAction
+class InstallApp extends AbstractCliAction
 {
 
     /**
@@ -38,26 +38,14 @@ class GetApps extends AbstractCliAction
      */
     function call(Client $client, array $args)
     {
-        return call_user_func_array([$client, 'getApps'], $this->getArguments($args));
+        return call_user_func_array([$client, 'installApp'], $this->getArguments($args));
     }
 
     function setRequiredArguments()
     {
         $this->requiredArguments = [
+            Parameters::APPLICATIONID
         ];
     }
 
-    public function setOptionalArguments()
-    {
-        $this->optionalArguments = [
-            Parameters::CATEGORY,
-            Parameters::NAME,
-            Parameters::TYPE,
-            Parameters::LINK,
-            Parameters::LIMIT,
-            Parameters::OFFSET,
-            Parameters::ORDERBY
-        ];
-
-    }
 }
