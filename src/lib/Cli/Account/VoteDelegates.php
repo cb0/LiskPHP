@@ -20,7 +20,7 @@
 namespace Lisk\Cli\Account;
 
 
-use Lisk\Api\Account\AccountInformationResponse;
+use Lisk\Api\Account\RegistersAppResponse;
 use Lisk\Cli\AbstractCliAction;
 use Lisk\Cli\Parameters;
 use Lisk\Client;
@@ -35,7 +35,7 @@ class VoteDelegates extends AbstractCliAction
      *
      * @param Client $client
      * @param array $args
-     * @return AccountInformationResponse
+     * @return RegistersAppResponse
      */
     function call(Client $client, array $args)
     {

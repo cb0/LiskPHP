@@ -27,6 +27,7 @@ use Lisk\Cli\Account\GeneratePublicKey;
 use Lisk\Cli\Account\GetPublicKey;
 use Lisk\Cli\Account\Open;
 use Lisk\Cli\Account\VoteDelegates;
+use Lisk\Cli\Apps\RegisterApp;
 use Lisk\Cli\Blocks\GetBlock;
 use Lisk\Cli\Blocks\GetBlockchainFee;
 use Lisk\Cli\Blocks\GetBlockchainFees;
@@ -159,6 +160,9 @@ class ActionFactory
                 return new GetForgedByAccount();
             case "getNextForger":
                 return new GetNextForger();
+            //Apps
+            case "registerApp":
+                return new RegisterApp();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }

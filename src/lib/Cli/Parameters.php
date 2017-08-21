@@ -68,6 +68,14 @@ class Parameters
     const START = 'start';
     const END = 'end';
 
+    const CATEGORY = 'category';
+    const NAME = 'name';
+    const DESCRIPTION = 'description';
+    const TAGS = 'tags';
+    const TYPE = 'type';
+    const LINK = 'link';
+    const ICON = 'icon';
+
     public static $descriptions = [
         self::ADDRESS => "Address of account",
         self::SECRET => "Secret key of account",
@@ -102,6 +110,13 @@ class Parameters
         self::TOTALFORGED => 'Total block forged. Integer',
         self::DELEGATE_USERNAME => 'Username of delegate. String from 1 to 20 characters.',
         self::START => 'Sets the start time of the search - timestamp UNIX time. (String)',
-        self::END => 'Sets the endtime of the search - timestamp UNIX time. (String)'
+        self::END => 'Sets the endtime of the search - timestamp UNIX time. (String)',
+        self::CATEGORY => 'DApp category. Integer. Required',
+        self::NAME => 'DApp name. String. Required',
+        self::DESCRIPTION => 'DApp description. String. Optional',
+        self::TAGS => 'DApp tags. String. Optional',
+        self::TYPE => 'DApp type. Integer. Required (Only type 0 is currently supported)',
+        self::LINK => 'Link to DApp file. ZIP supported. String. Required',
+        self::ICON => 'Link to icon file. PNG and JPG/JPEG supported. String. Optional'
     ];
 }

@@ -20,7 +20,7 @@
 namespace Lisk\Cli\Loader;
 
 
-use Lisk\Api\Account\AccountInformationResponse;
+use Lisk\Api\Account\RegistersAppResponse;
 use Lisk\Cli\AbstractCliAction;
 use Lisk\Client;
 
@@ -34,7 +34,7 @@ class SynchronizationStatus extends AbstractCliAction
      *
      * @param Client $client
      * @param array $args
-     * @return AccountInformationResponse
+     * @return RegistersAppResponse
      */
     function call(Client $client, array $args)
     {

@@ -32,6 +32,8 @@ use Lisk\Api\Account\OpenRequest;
 use Lisk\Api\Account\OpenResponse;
 use Lisk\Api\Account\VoteDelegatesRequest;
 use Lisk\Api\Account\VoteDelegatesResponse;
+use Lisk\Api\Apps\RegisterAppRequest;
+use Lisk\Api\Apps\RegisterAppResponse;
 use Lisk\Api\Blocks\GetBlockchainFeeRequest;
 use Lisk\Api\Blocks\GetBlockchainFeeResponse;
 use Lisk\Api\Blocks\GetBlockchainFeesRequest;
@@ -417,5 +419,38 @@ class Client
     public function getNextForger($limit = null)
     {
         return new GetNextForgerResponse($this->client->query(new GetNextForgerRequest($limit)));
+    }
+
+    //Apps
+    public function registerApp(
+        $secret,
+        $category,
+        $name,
+        $type,
+        $link,
+        $secondSecret = null,
+        $publicKey = null,
+        $description = null,
+        $tags = null,
+        $icon = null
+    ) {
+        $request = new RegisterAppRequest($secret, $category, $name, $type, $link);
+        if ($secondSecret !== null) {
+            $request->setSecondSecret($secondSecret);
+        }
+        if ($publicKey !== null) {
+            $request->setPublicKey($publicKey);
+        }
+        if ($description !== null) {
+            $request->setDescription($description);
+        }
+        if ($tags !== null) {
+            $request->setTags($tags);
+        }
+        if ($icon !== null) {
+            $request->setIcon($icon);
+        }
+
+        return new RegisterAppResponse($this->client->query($request));
     }
 }
