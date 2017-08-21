@@ -19,54 +19,35 @@
 
 namespace Lisk\Api\MultiSignature;
 
-use Lisk\AbstractRequest;
-use Lisk\Cli\Parameters;
+use Lisk\AbstractResponse;
 
-
-class GetAccountsRequest extends AbstractRequest
+class GetPendingTransactionsResponse extends AbstractResponse
 {
-    private $publicKey;
+    private $transactions;
 
-    public function __construct($publicKey)
+    public function success($jsonResponse)
     {
-        parent::__construct();
-        $this->publicKey = $publicKey;
-    }
-
-    function setEndpoint()
-    {
-        $this->endpoint = "/api/multisignatures/accounts";
-    }
-
-
-    function setType()
-    {
-        $this->type = self::GET;
-    }
-
-    public function getPayload()
-    {
-
-        return [
-            Parameters::SENDER_PUBLIC_KEY => $this->publicKey
-        ];
+        $this->transactions = $jsonResponse['transactions'];
     }
 
     /**
      * @return mixed
      */
-    public function getPublicKey()
+    public function getTransactions()
     {
-        return $this->publicKey;
+        return $this->transactions;
     }
 
     /**
-     * @param mixed $publicKey
+     * @param mixed $transactions
      */
-    public function setPublicKey($publicKey)
+    public function setTransactions($transactions)
     {
-        $this->publicKey = $publicKey;
+        $this->transactions = $transactions;
     }
+
+
+
 
 
 }

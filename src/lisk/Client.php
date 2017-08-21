@@ -109,6 +109,8 @@ use Lisk\Api\MultiSignature\CreateAccountRequest as CreateMultiSignatureAccountR
 use Lisk\Api\MultiSignature\CreateAccountResponse as CreateMultiSignatureAccountResponse;
 use Lisk\Api\MultiSignature\GetAccountsRequest;
 use Lisk\Api\MultiSignature\GetAccountsResponse;
+use Lisk\Api\MultiSignature\GetPendingTransactionsRequest;
+use Lisk\Api\MultiSignature\GetPendingTransactionsResponse;
 use Lisk\Api\Peer\GetPeerListResponse;
 use Lisk\Api\Peer\GetPeerRequest;
 use Lisk\Api\Peer\GetPeerResponse;
@@ -606,6 +608,12 @@ class Client
     public function getMultiSignatureAccounts($publicKey)
     {
         return new GetAccountsResponse($this->client->query(new GetAccountsRequest($publicKey)));
+    }
+
+
+    public function getPendingTransactions($publicKey)
+    {
+        return new GetPendingTransactionsResponse($this->client->query(new GetPendingTransactionsRequest($publicKey)));
     }
 
 }

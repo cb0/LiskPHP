@@ -23,7 +23,7 @@ use Lisk\AbstractRequest;
 use Lisk\Cli\Parameters;
 
 
-class GetAccountsRequest extends AbstractRequest
+class GetPendingTransactionsRequest extends AbstractRequest
 {
     private $publicKey;
 
@@ -35,7 +35,7 @@ class GetAccountsRequest extends AbstractRequest
 
     function setEndpoint()
     {
-        $this->endpoint = "/api/multisignatures/accounts";
+        $this->endpoint = "/api/multisignatures/pending";
     }
 
 
