@@ -86,6 +86,8 @@ class Parameters
     const MINSIGNATURES = 'min';
     const KEYSGROUP = 'keysgroup';
 
+    const TRANSACTIONID = 'transactionId';
+
     public static $descriptions = [
         self::ADDRESS => "Address of account",
         self::SECRET => "Secret key of account",
@@ -134,6 +136,7 @@ class Parameters
         self::PARAMS => 'dapp launch params, not required, array',
         self::LIFETIME => 'request lifetime in hours (1-72). required.',
         self::MINSIGNATURES => 'minimum signatures needed to approve a tx or a change (1-16). integer. required',
-        self::KEYSGROUP => '[array of public keys strings]. add \'+\' before publicKey to add an account. required. immutable.'
+        self::KEYSGROUP => '[array of public keys strings]. add \'+\' before publicKey to add an account. required. immutable.',
+        self::TRANSACTIONID => 'id of transaction to sign. REQUIRED'
     ];
 }

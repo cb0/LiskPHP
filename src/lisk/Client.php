@@ -111,6 +111,8 @@ use Lisk\Api\MultiSignature\GetAccountsRequest;
 use Lisk\Api\MultiSignature\GetAccountsResponse;
 use Lisk\Api\MultiSignature\GetPendingTransactionsRequest;
 use Lisk\Api\MultiSignature\GetPendingTransactionsResponse;
+use Lisk\Api\MultiSignature\SignPendingTransactionRequest;
+use Lisk\Api\MultiSignature\SignPendingTransactionResponse;
 use Lisk\Api\Peer\GetPeerListResponse;
 use Lisk\Api\Peer\GetPeerRequest;
 use Lisk\Api\Peer\GetPeerResponse;
@@ -614,6 +616,13 @@ class Client
     public function getPendingTransactions($publicKey)
     {
         return new GetPendingTransactionsResponse($this->client->query(new GetPendingTransactionsRequest($publicKey)));
+    }
+
+    public function signPendingTransaction($secret, $transactionId, $publicKey = null)
+    {
+        return new SignPendingTransactionResponse($this->client->query(
+            new SignPendingTransactionRequest($secret, $transactionId, $publicKey)
+        ));
     }
 
 }
