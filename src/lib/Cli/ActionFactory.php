@@ -36,6 +36,7 @@ use Lisk\Cli\Apps\LaunchApp;
 use Lisk\Cli\Apps\RegisterApp;
 use Lisk\Cli\Apps\SearchApps;
 use Lisk\Cli\Apps\UninstallApp;
+use Lisk\Cli\Apps\UninstallingApp;
 use Lisk\Cli\Blocks\GetBlock;
 use Lisk\Cli\Blocks\GetBlockchainFee;
 use Lisk\Cli\Blocks\GetBlockchainFees;
@@ -189,6 +190,8 @@ class ActionFactory
                 return new LaunchApp();
             case 'installingApp':
                 return new InstallingApp();
+            case 'uninstallingApp':
+                return new UninstallingApp();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }
