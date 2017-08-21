@@ -38,6 +38,8 @@ use Lisk\Api\Apps\GetAppRequest;
 use Lisk\Api\Apps\GetAppResponse;
 use Lisk\Api\Apps\GetAppsRequest;
 use Lisk\Api\Apps\GetAppsResponse;
+use Lisk\Api\Apps\GetCategoriesRequest;
+use Lisk\Api\Apps\GetCategoriesResponse;
 use Lisk\Api\Apps\GetInstalledAppsRequest;
 use Lisk\Api\Apps\GetInstalledAppsResponse;
 use Lisk\Api\Apps\InstallAppRequest;
@@ -573,5 +575,10 @@ class Client
     public function launchedApps()
     {
         return new LaunchedAppsResponse($this->client->query(new LaunchedAppsRequest()));
+    }
+
+    public function getCategories()
+    {
+        return new GetCategoriesResponse($this->client->query(new GetCategoriesRequest()));
     }
 }

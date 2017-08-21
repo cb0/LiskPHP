@@ -29,6 +29,7 @@ use Lisk\Cli\Account\VoteDelegates;
 use Lisk\Cli\Apps\GetAllInstalledApps;
 use Lisk\Cli\Apps\GetApp;
 use Lisk\Cli\Apps\GetApps;
+use Lisk\Cli\Apps\GetCategories;
 use Lisk\Cli\Apps\GetInstalledApps;
 use Lisk\Cli\Apps\InstallApp;
 use Lisk\Cli\Apps\InstallingApp;
@@ -195,6 +196,8 @@ class ActionFactory
                 return new UninstallingApp();
             case 'launchedApps':
                 return new LaunchedApps();
+            case 'getCategories':
+                return new GetCategories();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }
