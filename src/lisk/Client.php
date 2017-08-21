@@ -32,6 +32,7 @@ use Lisk\Api\Account\OpenRequest;
 use Lisk\Api\Account\OpenResponse;
 use Lisk\Api\Account\VoteDelegatesRequest;
 use Lisk\Api\Account\VoteDelegatesResponse;
+use Lisk\Api\Apps\CreateAccountResponse;
 use Lisk\Api\Apps\GetAllInstalledAppsRequest;
 use Lisk\Api\Apps\GetAllInstalledAppsResponse;
 use Lisk\Api\Apps\GetAppRequest;
@@ -43,7 +44,6 @@ use Lisk\Api\Apps\GetCategoriesResponse;
 use Lisk\Api\Apps\GetInstalledAppsRequest;
 use Lisk\Api\Apps\GetInstalledAppsResponse;
 use Lisk\Api\Apps\InstallAppRequest;
-use Lisk\Api\Apps\InstallAppResponse;
 use Lisk\Api\Apps\InstallingAppRequest;
 use Lisk\Api\Apps\InstallingAppResponse;
 use Lisk\Api\Apps\LaunchAppRequest;
@@ -105,6 +105,8 @@ use Lisk\Api\Loader\LoadingStatusRequest;
 use Lisk\Api\Loader\LoadingStatusResponse;
 use Lisk\Api\Loader\SynchronizationStatusRequest;
 use Lisk\Api\Loader\SynchronizationStatusResponse;
+use Lisk\Api\MultiSignature\CreateAccountRequest as CreateMultiSignatureAccountRequest;
+use Lisk\Api\MultiSignature\CreateAccountResponse as CreateMultiSignatureAccountResponse;
 use Lisk\Api\Peer\GetPeerListResponse;
 use Lisk\Api\Peer\GetPeerRequest;
 use Lisk\Api\Peer\GetPeerResponse;
@@ -537,11 +539,11 @@ class Client
     /**
      * ToDo: Not working with error message "Error: Invalid master passphrase"
      * @param $id
-     * @return InstallAppResponse
+     * @return CreateAccountResponse
      */
     public function installApp($id)
     {
-        return new InstallAppResponse($this->client->query(new InstallAppRequest($id)));
+        return new CreateAccountResponse($this->client->query(new InstallAppRequest($id)));
     }
 
     public function getInstalledApps()
@@ -588,4 +590,15 @@ class Client
     {
         return new StopAppResponse($this->client->query(new StopAppRequest($id)));
     }
+
+    //MultiSignature
+    public function createMultiSignatureAccount($secret, $lifetime, $min, $keysgroup, $secondSecret = null)
+    {
+        return new CreateMultiSignatureAccountResponse(
+            $this->client->query(
+                new CreateMultiSignatureAccountRequest($secret, $lifetime, $min, $keysgroup, $secondSecret)
+            )
+        );
+    }
+
 }

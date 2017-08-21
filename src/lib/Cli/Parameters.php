@@ -82,6 +82,10 @@ class Parameters
 
     const PARAMS = 'params';
 
+    const LIFETIME = 'lifetime';
+    const MINSIGNATURES = 'min';
+    const KEYSGROUP = 'keysgroup';
+
     public static $descriptions = [
         self::ADDRESS => "Address of account",
         self::SECRET => "Secret key of account",
@@ -127,6 +131,9 @@ class Parameters
         self::SEARCHCRITERIA => 'Search criteria. (String)',
         self::INSTALLED => 'Search installed apps only. 1 or 0. (Integer)',
         self::APPLICATIONID => 'Blockchain Application id to install',
-        self::PARAMS => 'dapp launch params, not required, array'
+        self::PARAMS => 'dapp launch params, not required, array',
+        self::LIFETIME => 'request lifetime in hours (1-72). required.',
+        self::MINSIGNATURES => 'minimum signatures needed to approve a tx or a change (1-16). integer. required',
+        self::KEYSGROUP => '[array of public keys strings]. add \'+\' before publicKey to add an account. required. immutable.'
     ];
 }
