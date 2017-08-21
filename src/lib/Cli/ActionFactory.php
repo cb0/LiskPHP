@@ -27,6 +27,7 @@ use Lisk\Cli\Account\GeneratePublicKey;
 use Lisk\Cli\Account\GetPublicKey;
 use Lisk\Cli\Account\Open;
 use Lisk\Cli\Account\VoteDelegates;
+use Lisk\Cli\Apps\GetApp;
 use Lisk\Cli\Apps\GetApps;
 use Lisk\Cli\Apps\RegisterApp;
 use Lisk\Cli\Blocks\GetBlock;
@@ -166,6 +167,8 @@ class ActionFactory
                 return new RegisterApp();
             case "getApps":
                 return new GetApps();
+            case "getApp":
+                return new GetApp();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }

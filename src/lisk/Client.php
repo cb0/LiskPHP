@@ -32,6 +32,8 @@ use Lisk\Api\Account\OpenRequest;
 use Lisk\Api\Account\OpenResponse;
 use Lisk\Api\Account\VoteDelegatesRequest;
 use Lisk\Api\Account\VoteDelegatesResponse;
+use Lisk\Api\Apps\GetAppRequest;
+use Lisk\Api\Apps\GetAppResponse;
 use Lisk\Api\Apps\GetAppsRequest;
 use Lisk\Api\Apps\GetAppsResponse;
 use Lisk\Api\Apps\RegisterAppRequest;
@@ -498,5 +500,10 @@ class Client
         }
 
         return new GetAppsResponse($this->client->query($request));
+    }
+
+    public function getApp($id)
+    {
+        return new GetAppResponse($this->client->query(new GetAppRequest($id)));
     }
 }
