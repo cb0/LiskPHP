@@ -90,6 +90,8 @@ use Lisk\Api\Delegate\GetDelegateCountRequest;
 use Lisk\Api\Delegate\GetDelegateCountResponse;
 use Lisk\Api\Delegate\GetDelegateListRequest;
 use Lisk\Api\Delegate\GetDelegateListResponse;
+use Lisk\Api\Delegate\GetDelegateRequest;
+use Lisk\Api\Delegate\GetDelegateResponse;
 use Lisk\Api\Delegate\GetDelegateVotersRequest;
 use Lisk\Api\Delegate\GetDelegateVotesRequest;
 use Lisk\Api\Delegate\GetDelegateVotesResponse;
@@ -400,6 +402,13 @@ class Client
     {
         return new CreateDelegateResponse($this->client->query(
             new CreateDelegateRequest($secret, $username, $secondSecret))
+        );
+    }
+
+    public function getDelegate($publicKey = null, $username = null)
+    {
+        return new GetDelegateResponse($this->client->query(
+            new GetDelegateRequest($publicKey, $username))
         );
     }
 

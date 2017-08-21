@@ -53,6 +53,7 @@ use Lisk\Cli\Blocks\GetTotalSupply;
 use Lisk\Cli\Delegate\CreateDelegate;
 use Lisk\Cli\Delegate\DisableForging;
 use Lisk\Cli\Delegate\EnableForging;
+use Lisk\Cli\Delegate\GetDelegate;
 use Lisk\Cli\Delegate\GetDelegateCount;
 use Lisk\Cli\Delegate\GetDelegateList;
 use Lisk\Cli\Delegate\GetDelegateVoters;
@@ -158,6 +159,8 @@ class ActionFactory
             //Delegate
             case "createDelegate":
                 return new CreateDelegate();
+            case "getDelegate":
+                return new GetDelegate();
             case "getDelegateList":
                 return new GetDelegateList();
             case "searchDelegate";
