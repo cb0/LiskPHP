@@ -29,7 +29,7 @@ should already work.
 - [x] Blocks
 - [x] Signatures
 - [x] Delegates
-- [ ] Apps
+- [x] Apps
 - [ ] Multi-signature
 
 ## Installation
