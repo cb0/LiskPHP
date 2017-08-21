@@ -54,6 +54,8 @@ use Lisk\Api\Apps\RegisterAppRequest;
 use Lisk\Api\Apps\RegisterAppResponse;
 use Lisk\Api\Apps\SearchAppsRequest;
 use Lisk\Api\Apps\SearchAppsResponse;
+use Lisk\Api\Apps\StopAppRequest;
+use Lisk\Api\Apps\StopAppResponse;
 use Lisk\Api\Apps\UninstallAppRequest;
 use Lisk\Api\Apps\UninstallAppResponse;
 use Lisk\Api\Apps\UninstallingAppRequest;
@@ -580,5 +582,10 @@ class Client
     public function getCategories()
     {
         return new GetCategoriesResponse($this->client->query(new GetCategoriesRequest()));
+    }
+
+    public function stopApp($id)
+    {
+        return new StopAppResponse($this->client->query(new StopAppRequest($id)));
     }
 }
