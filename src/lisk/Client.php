@@ -42,6 +42,8 @@ use Lisk\Api\Apps\GetInstalledAppsRequest;
 use Lisk\Api\Apps\GetInstalledAppsResponse;
 use Lisk\Api\Apps\InstallAppRequest;
 use Lisk\Api\Apps\InstallAppResponse;
+use Lisk\Api\Apps\InstallingAppRequest;
+use Lisk\Api\Apps\InstallingAppResponse;
 use Lisk\Api\Apps\LaunchAppRequest;
 use Lisk\Api\Apps\LaunchAppResponse;
 use Lisk\Api\Apps\RegisterAppRequest;
@@ -552,5 +554,10 @@ class Client
     public function launchApp($id, $params = [])
     {
         return new LaunchAppResponse($this->client->query(new LaunchAppRequest($id, $params)));
+    }
+
+    public function installingApp()
+    {
+        return new InstallingAppResponse($this->client->query(new InstallingAppRequest()));
     }
 }
