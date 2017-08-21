@@ -20,6 +20,7 @@
 namespace Lisk\Cli;
 
 
+use Lisk\Api\Apps\GetInstalledAppsRequest;
 use Lisk\Cli\Account\Balance;
 use Lisk\Cli\Account\Delegates;
 use Lisk\Cli\Account\GeneratePublicKey;
@@ -28,6 +29,7 @@ use Lisk\Cli\Account\Open;
 use Lisk\Cli\Account\VoteDelegates;
 use Lisk\Cli\Apps\GetApp;
 use Lisk\Cli\Apps\GetApps;
+use Lisk\Cli\Apps\GetInstalledApps;
 use Lisk\Cli\Apps\InstallApp;
 use Lisk\Cli\Apps\RegisterApp;
 use Lisk\Cli\Apps\SearchApps;
@@ -174,6 +176,8 @@ class ActionFactory
                 return new SearchApps();
             case 'installApp':
                 return new InstallApp();
+            case 'getInstalledApps':
+                return new GetInstalledApps();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }
