@@ -46,6 +46,8 @@ use Lisk\Api\Apps\RegisterAppRequest;
 use Lisk\Api\Apps\RegisterAppResponse;
 use Lisk\Api\Apps\SearchAppsRequest;
 use Lisk\Api\Apps\SearchAppsResponse;
+use Lisk\Api\Apps\UninstallAppRequest;
+use Lisk\Api\Apps\UninstallAppResponse;
 use Lisk\Api\Blocks\GetBlockchainFeeRequest;
 use Lisk\Api\Blocks\GetBlockchainFeeResponse;
 use Lisk\Api\Blocks\GetBlockchainFeesRequest;
@@ -538,5 +540,10 @@ class Client
     public function getAllInstalledApps()
     {
         return new GetAllInstalledAppsResponse($this->client->query(new GetAllInstalledAppsRequest()));
+    }
+
+    public function uninstallApp($id)
+    {
+        return new UninstallAppResponse($this->client->query(new UninstallAppRequest($id)));
     }
 }
