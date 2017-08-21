@@ -38,6 +38,8 @@ use Lisk\Api\Apps\GetAppsRequest;
 use Lisk\Api\Apps\GetAppsResponse;
 use Lisk\Api\Apps\RegisterAppRequest;
 use Lisk\Api\Apps\RegisterAppResponse;
+use Lisk\Api\Apps\SearchAppsRequest;
+use Lisk\Api\Apps\SearchAppsResponse;
 use Lisk\Api\Blocks\GetBlockchainFeeRequest;
 use Lisk\Api\Blocks\GetBlockchainFeeResponse;
 use Lisk\Api\Blocks\GetBlockchainFeesRequest;
@@ -505,5 +507,10 @@ class Client
     public function getApp($id)
     {
         return new GetAppResponse($this->client->query(new GetAppRequest($id)));
+    }
+
+    public function searchApps($q = null, $category = null, $installed = null)
+    {
+        return new SearchAppsResponse($this->client->query(new SearchAppsRequest($q, $category, $installed)));
     }
 }

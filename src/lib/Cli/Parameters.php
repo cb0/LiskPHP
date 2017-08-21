@@ -76,6 +76,9 @@ class Parameters
     const LINK = 'link';
     const ICON = 'icon';
 
+    const SEARCHCRITERIA = 'q';
+    const INSTALLED = 'installed';
+
     public static $descriptions = [
         self::ADDRESS => "Address of account",
         self::SECRET => "Secret key of account",
@@ -117,6 +120,8 @@ class Parameters
         self::TAGS => 'DApp tags. String. Optional',
         self::TYPE => 'DApp type. Integer. Required (Only type 0 is currently supported)',
         self::LINK => 'Link to DApp file. ZIP supported. String. Required',
-        self::ICON => 'Link to icon file. PNG and JPG/JPEG supported. String. Optional'
+        self::ICON => 'Link to icon file. PNG and JPG/JPEG supported. String. Optional',
+        self::SEARCHCRITERIA => 'Search criteria. (String)',
+        self::INSTALLED => 'Search installed apps only. 1 or 0. (Integer)'
     ];
 }

@@ -20,7 +20,6 @@
 namespace Lisk\Cli;
 
 
-use Lisk\Api\Delegate\GetForgedByAccountRequest;
 use Lisk\Cli\Account\Balance;
 use Lisk\Cli\Account\Delegates;
 use Lisk\Cli\Account\GeneratePublicKey;
@@ -30,6 +29,7 @@ use Lisk\Cli\Account\VoteDelegates;
 use Lisk\Cli\Apps\GetApp;
 use Lisk\Cli\Apps\GetApps;
 use Lisk\Cli\Apps\RegisterApp;
+use Lisk\Cli\Apps\SearchApps;
 use Lisk\Cli\Blocks\GetBlock;
 use Lisk\Cli\Blocks\GetBlockchainFee;
 use Lisk\Cli\Blocks\GetBlockchainFees;
@@ -169,6 +169,8 @@ class ActionFactory
                 return new GetApps();
             case "getApp":
                 return new GetApp();
+            case 'searchApps':
+                return new SearchApps();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }
