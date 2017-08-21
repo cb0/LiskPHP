@@ -32,6 +32,8 @@ use Lisk\Api\Account\OpenRequest;
 use Lisk\Api\Account\OpenResponse;
 use Lisk\Api\Account\VoteDelegatesRequest;
 use Lisk\Api\Account\VoteDelegatesResponse;
+use Lisk\Api\Apps\GetAllInstalledAppsRequest;
+use Lisk\Api\Apps\GetAllInstalledAppsResponse;
 use Lisk\Api\Apps\GetAppRequest;
 use Lisk\Api\Apps\GetAppResponse;
 use Lisk\Api\Apps\GetAppsRequest;
@@ -531,5 +533,10 @@ class Client
     public function getInstalledApps()
     {
         return new GetInstalledAppsResponse($this->client->query(new GetInstalledAppsRequest()));
+    }
+
+    public function getAllInstalledApps()
+    {
+        return new GetAllInstalledAppsResponse($this->client->query(new GetAllInstalledAppsRequest()));
     }
 }
