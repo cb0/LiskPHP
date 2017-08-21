@@ -31,7 +31,7 @@ class SendTransactionRequest extends AbstractRequest
     private $publicKey;
     private $secondSecret;
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/transactions";
     }
@@ -56,7 +56,7 @@ class SendTransactionRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::PUT;
     }

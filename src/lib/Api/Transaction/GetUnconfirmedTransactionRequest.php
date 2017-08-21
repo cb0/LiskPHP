@@ -32,7 +32,7 @@ class GetUnconfirmedTransactionRequest extends AbstractRequest
         $this->id = $id;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/transactions/unconfirmed/get";
     }

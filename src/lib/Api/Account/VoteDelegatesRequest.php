@@ -39,7 +39,7 @@ class VoteDelegatesRequest extends AbstractRequest
         $this->delegates = $delegates;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/accounts/delegates";
     }
@@ -62,7 +62,7 @@ class VoteDelegatesRequest extends AbstractRequest
         return $arr;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::PUT;
     }

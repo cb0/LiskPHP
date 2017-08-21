@@ -36,12 +36,12 @@ class SignPendingTransaction extends AbstractCliAction
      * @param array $args
      * @return \Lisk\Api\Apps\RegisterAppResponse
      */
-    function call(Client $client, array $args)
+    public function call(Client $client, array $args)
     {
         return call_user_func_array([$client, 'signPendingTransaction'], $this->getArguments($args));
     }
 
-    function setRequiredArguments()
+    public function setRequiredArguments()
     {
         $this->requiredArguments = [
             Parameters::SECRET,

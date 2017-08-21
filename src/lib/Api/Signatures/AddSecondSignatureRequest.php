@@ -37,7 +37,7 @@ class AddSecondSignatureRequest extends AbstractRequest
         $this->publicKey = $publicKey;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/signatures";
     }

@@ -36,13 +36,13 @@ class LaunchAppRequest extends AbstractRequest
 
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps/launch";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::POST;
     }

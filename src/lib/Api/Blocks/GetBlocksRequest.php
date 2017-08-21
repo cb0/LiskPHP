@@ -33,7 +33,7 @@ class GetBlocksRequest extends AbstractRequest
     private $offset;
     private $orderBy;
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/blocks";
     }
@@ -70,7 +70,7 @@ class GetBlocksRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

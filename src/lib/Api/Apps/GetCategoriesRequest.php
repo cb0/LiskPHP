@@ -29,13 +29,13 @@ class GetCategoriesRequest extends AbstractRequest
         parent::__construct();
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps/categories";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

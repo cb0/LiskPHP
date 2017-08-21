@@ -37,7 +37,7 @@ class CreateDelegateRequest extends AbstractRequest
         $this->secondSecret = $secondSecret;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates";
     }
@@ -56,7 +56,7 @@ class CreateDelegateRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::PUT;
     }

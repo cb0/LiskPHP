@@ -37,14 +37,14 @@ class VoteDelegates extends AbstractCliAction
      * @param array $args
      * @return RegistersAppResponse
      */
-    function call(Client $client, array $args)
+    public function call(Client $client, array $args)
     {
         $param_arr = $this->getArguments($args);
         $call_user_func_array = call_user_func_array([$client, 'voteDelegates'], $param_arr);
         return $call_user_func_array;
     }
 
-    function setRequiredArguments()
+    public function setRequiredArguments()
     {
         $this->requiredArguments = [
             Parameters::VOTE_DELEGATES,
@@ -52,7 +52,7 @@ class VoteDelegates extends AbstractCliAction
         ];
     }
 
-    function setOptionalArguments()
+    public function setOptionalArguments()
     {
         $this->optionalArguments = [
             Parameters::SECOND_SECRET,

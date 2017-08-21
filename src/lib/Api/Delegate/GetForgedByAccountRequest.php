@@ -36,7 +36,7 @@ class GetForgedByAccountRequest extends AbstractRequest
         $this->end=$end;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates/forging/getForgedByAccount";
     }
@@ -50,7 +50,7 @@ class GetForgedByAccountRequest extends AbstractRequest
         return $payload;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

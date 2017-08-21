@@ -31,7 +31,7 @@ class GetBlockRequest extends AbstractRequest
         $this->id = $id;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/blocks/get";
     }
@@ -43,7 +43,7 @@ class GetBlockRequest extends AbstractRequest
         ];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

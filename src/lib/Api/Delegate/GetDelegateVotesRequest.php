@@ -33,7 +33,7 @@ class GetDelegateVotesRequest extends AbstractRequest
         $this->address = $address;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/accounts/delegates/";
     }
@@ -47,7 +47,7 @@ class GetDelegateVotesRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

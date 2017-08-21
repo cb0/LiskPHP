@@ -36,17 +36,17 @@ class GetNextForger extends AbstractCliAction
      * @param array $args
      * @return BlockStatusResponse
      */
-    function call(Client $client, array $args)
+    public function call(Client $client, array $args)
     {
         return call_user_func_array([$client, 'getNextForger'], $this->getArguments($args));
     }
 
-    function setRequiredArguments()
+    public function setRequiredArguments()
     {
         $this->requiredArguments = [];
     }
 
-    function setOptionalArguments()
+    public function setOptionalArguments()
     {
         $this->requiredArguments = [
             Parameters::LIMIT

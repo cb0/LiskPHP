@@ -30,7 +30,7 @@ class BlockStatusRequest extends AbstractRequest
         parent::__construct();
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/loader/status/ping";
     }
@@ -40,7 +40,7 @@ class BlockStatusRequest extends AbstractRequest
         return [];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

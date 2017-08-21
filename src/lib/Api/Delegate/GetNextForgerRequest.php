@@ -33,7 +33,7 @@ class GetNextForgerRequest extends AbstractRequest
         $this->limit = $limit;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates/getNextForgers";
     }
@@ -49,7 +49,7 @@ class GetNextForgerRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

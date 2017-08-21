@@ -22,7 +22,7 @@ use Lisk\AbstractRequest;
 class GetStatusInfoRequest extends AbstractRequest
 {
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/blocks/getStatus";
     }

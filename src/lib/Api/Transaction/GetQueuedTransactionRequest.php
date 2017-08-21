@@ -32,7 +32,7 @@ class GetQueuedTransactionRequest extends AbstractRequest
 
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/transactions/queued/get";
     }
@@ -46,7 +46,7 @@ class GetQueuedTransactionRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

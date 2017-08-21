@@ -33,13 +33,13 @@ class GetAppRequest extends AbstractRequest
         $this->id = $id;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps/get";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

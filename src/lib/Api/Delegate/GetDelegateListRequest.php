@@ -37,7 +37,7 @@ class GetDelegateListRequest extends AbstractRequest
         $this->orderBy = $orderBy;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates";
     }
@@ -61,7 +61,7 @@ class GetDelegateListRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

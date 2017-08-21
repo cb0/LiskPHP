@@ -41,13 +41,13 @@ class CreateAccountRequest extends AbstractRequest
         $this->keysgroup = explode(",", $keygroups);
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/multisignatures";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::PUT;
     }

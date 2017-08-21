@@ -26,7 +26,7 @@ class GetDelegateCountRequest extends AbstractRequest
 {
 
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates/count";
     }
@@ -36,7 +36,7 @@ class GetDelegateCountRequest extends AbstractRequest
         return [];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

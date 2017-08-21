@@ -25,7 +25,7 @@ use Lisk\AbstractRequest;
 class ListQueuedTransactionsRequest extends AbstractRequest
 {
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/transactions/queued";
     }

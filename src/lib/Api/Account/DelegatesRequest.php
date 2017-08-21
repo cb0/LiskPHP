@@ -31,7 +31,7 @@ class DelegatesRequest extends AbstractRequest
         $this->address = $secret;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/accounts/delegates";
     }
@@ -41,7 +41,7 @@ class DelegatesRequest extends AbstractRequest
         return ['address' => $this->address];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

@@ -25,13 +25,13 @@ use Lisk\AbstractRequest;
 class GetInstalledAppsRequest extends AbstractRequest
 {
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps/installed";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

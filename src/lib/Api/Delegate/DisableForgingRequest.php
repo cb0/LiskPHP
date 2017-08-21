@@ -22,7 +22,7 @@ namespace Lisk\Api\Delegate;
 
 class DisableForgingRequest extends EnableForgingRequest
 {
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates/forging/disable";
     }

@@ -24,7 +24,7 @@ class GetBlockchainFeeRequest extends AbstractRequest
 {
 
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/blocks/getFee";
     }

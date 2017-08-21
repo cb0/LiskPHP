@@ -33,13 +33,13 @@ class InstallAppRequest extends AbstractRequest
         $this->id = $id;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps/install";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::POST;
     }

@@ -25,7 +25,7 @@ use Lisk\AbstractRequest;
 class ListUnconfirmedTransactionsRequest extends AbstractRequest
 {
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/transactions/unconfirmed";
     }
@@ -35,7 +35,7 @@ class ListUnconfirmedTransactionsRequest extends AbstractRequest
         return [];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

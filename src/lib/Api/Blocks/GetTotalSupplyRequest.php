@@ -24,7 +24,7 @@ class GetTotalSupplyRequest extends AbstractRequest
 {
 
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/blocks/getSupply";
     }

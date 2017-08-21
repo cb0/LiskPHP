@@ -29,13 +29,13 @@ class UninstallingAppRequest extends AbstractRequest
         parent::__construct();
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps/uninstalling";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

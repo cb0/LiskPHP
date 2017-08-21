@@ -33,13 +33,13 @@ class StopAppRequest extends AbstractRequest
         $this->id = $id;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps/stop";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::POST;
     }

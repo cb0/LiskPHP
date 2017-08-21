@@ -33,7 +33,7 @@ class GetDelegateVotersRequest extends AbstractRequest
         $this->publicKey= $publicKey;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates/voters?";
     }
@@ -47,7 +47,7 @@ class GetDelegateVotersRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

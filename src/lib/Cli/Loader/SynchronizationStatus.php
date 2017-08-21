@@ -36,12 +36,12 @@ class SynchronizationStatus extends AbstractCliAction
      * @param array $args
      * @return RegistersAppResponse
      */
-    function call(Client $client, array $args)
+    public function call(Client $client, array $args)
     {
         return call_user_func_array([$client, 'getSynchronizationStatus'], $this->getArguments($args));
     }
 
-    function setRequiredArguments()
+    public function setRequiredArguments()
     {
         $this->requiredArguments = [
 

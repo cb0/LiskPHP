@@ -47,7 +47,7 @@ class RegisterAppRequest extends AbstractRequest
         $this->link = $link;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps";
     }
@@ -167,7 +167,7 @@ class RegisterAppRequest extends AbstractRequest
         $this->icon = $icon;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::PUT;
     }

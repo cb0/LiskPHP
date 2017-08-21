@@ -25,7 +25,7 @@ class GetPeerVersionRequest extends AbstractRequest
 {
 
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/peers/version";
     }
@@ -35,7 +35,7 @@ class GetPeerVersionRequest extends AbstractRequest
         return [];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

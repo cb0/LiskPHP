@@ -33,13 +33,13 @@ class GetPendingTransactionsRequest extends AbstractRequest
         $this->publicKey = $publicKey;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/multisignatures/pending";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

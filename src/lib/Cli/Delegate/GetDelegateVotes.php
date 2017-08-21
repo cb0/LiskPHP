@@ -36,12 +36,12 @@ class GetDelegateVotes extends AbstractCliAction
      * @param array $args
      * @return BlockStatusResponse
      */
-    function call(Client $client, array $args)
+    public function call(Client $client, array $args)
     {
         return call_user_func_array([$client, 'getDelegateVotes'], $this->getArguments($args));
     }
 
-    function setRequiredArguments()
+    public function setRequiredArguments()
     {
         $this->requiredArguments = [
             Parameters::ADDRESS

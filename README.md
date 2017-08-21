@@ -18,9 +18,7 @@ See https://docs.lisk.io/docs/lisk-api
 
 ### Completeness
 
-This list shows the api sections that are currently supported.
-As you can see it is not complete yet. However the sections marked as complete 
-should already work.
+This list shows the lisk api sections that are currently supported.
 
 - [x] Accounts
 - [x] Loader
@@ -30,7 +28,7 @@ should already work.
 - [x] Signatures
 - [x] Delegates
 - [x] Apps
-- [ ] Multi-signature
+- [x] Multi-signature
 
 ## Installation
 
@@ -46,14 +44,13 @@ $client = new \Lisk\Client('http://testnet.lisk.io:7000');
 $balance = $client->getBalance("YOUR_LISK_ADDRESS");
 
 ```
-And many many functions more.... [ToBeDocumented]
 
 ## ToDo:
 
-- [1] complete API
-- [2] complete documentation
-- [3] put package on packagist
-- [...] more
+- [x][1] complete API
+- [ ][2] complete documentation
+- [ ][3] put package on packagist
+- [ ][...] more
 
 ## Support
 

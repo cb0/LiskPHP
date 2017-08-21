@@ -32,7 +32,7 @@ class GetPublicKeyRequest extends AbstractRequest
         $this->address = $secret;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/accounts/getPublicKey";
     }
@@ -42,7 +42,7 @@ class GetPublicKeyRequest extends AbstractRequest
         return ['address' => $this->address];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

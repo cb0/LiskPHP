@@ -34,7 +34,7 @@ class GetPeerRequest extends AbstractRequest
         $this->port = $port;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/peers/get";
     }
@@ -47,7 +47,7 @@ class GetPeerRequest extends AbstractRequest
         ];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

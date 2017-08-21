@@ -25,7 +25,7 @@ class GetSignatureFeeRequest extends AbstractRequest
 {
 
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/signatures/fee";
     }

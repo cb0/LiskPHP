@@ -31,7 +31,7 @@ class GetPeerListRequest extends AbstractRequest
     private $offset;
     private $orderBy;
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/peers";
     }
@@ -62,7 +62,7 @@ class GetPeerListRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

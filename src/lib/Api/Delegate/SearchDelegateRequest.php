@@ -35,7 +35,7 @@ class SearchDelegateRequest extends AbstractRequest
         $this->orderBy = $orderBy;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates/search";
     }
@@ -53,7 +53,7 @@ class SearchDelegateRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

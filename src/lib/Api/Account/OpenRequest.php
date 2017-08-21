@@ -31,7 +31,7 @@ class OpenRequest extends AbstractRequest
         $this->secret = $secret;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/accounts/open";
     }
@@ -41,7 +41,7 @@ class OpenRequest extends AbstractRequest
         return ['secret' => $this->secret];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::POST;
     }

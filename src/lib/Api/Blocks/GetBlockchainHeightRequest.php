@@ -24,7 +24,7 @@ class GetBlockchainHeightRequest extends AbstractRequest
 {
 
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/blocks/getHeight";
     }

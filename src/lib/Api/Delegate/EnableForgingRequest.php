@@ -33,7 +33,7 @@ class EnableForgingRequest extends AbstractRequest
         $this->secret = $secret;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/delegates/forging/enable";
     }
@@ -45,7 +45,7 @@ class EnableForgingRequest extends AbstractRequest
         ];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::POST;
     }

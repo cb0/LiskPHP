@@ -36,13 +36,13 @@ class SearchAppsRequest extends AbstractRequest
         $this->installed = $installed;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/dapps/search";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

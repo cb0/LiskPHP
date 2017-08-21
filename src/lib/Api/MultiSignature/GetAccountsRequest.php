@@ -33,13 +33,13 @@ class GetAccountsRequest extends AbstractRequest
         $this->publicKey = $publicKey;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/multisignatures/accounts";
     }
 
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

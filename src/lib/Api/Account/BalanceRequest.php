@@ -31,7 +31,7 @@ class BalanceRequest extends AbstractRequest
         $this->address = $secret;
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "api/accounts/getBalance";
     }
@@ -41,7 +41,7 @@ class BalanceRequest extends AbstractRequest
         return ['address' => $this->address];
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }

@@ -32,7 +32,7 @@ class GetTransactionRequest extends AbstractRequest
 
     }
 
-    function setEndpoint()
+    public function setEndpoint()
     {
         $this->endpoint = "/api/transactions/get";
     }
@@ -46,7 +46,7 @@ class GetTransactionRequest extends AbstractRequest
         return $params;
     }
 
-    function setType()
+    public function setType()
     {
         $this->type = self::GET;
     }
