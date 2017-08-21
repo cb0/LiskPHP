@@ -32,6 +32,8 @@ use Lisk\Api\Account\OpenRequest;
 use Lisk\Api\Account\OpenResponse;
 use Lisk\Api\Account\VoteDelegatesRequest;
 use Lisk\Api\Account\VoteDelegatesResponse;
+use Lisk\Api\Apps\GetAppsRequest;
+use Lisk\Api\Apps\GetAppsResponse;
 use Lisk\Api\Apps\RegisterAppRequest;
 use Lisk\Api\Apps\RegisterAppResponse;
 use Lisk\Api\Blocks\GetBlockchainFeeRequest;
@@ -452,5 +454,49 @@ class Client
         }
 
         return new RegisterAppResponse($this->client->query($request));
+    }
+
+
+    public function getApps(
+        $category = null,
+        $name = null,
+        $appType = null,
+        $link = null,
+        $limit = null,
+        $offset = null,
+        $orderBy = null
+    ) {
+
+        $request = new GetAppsRequest();
+
+        if ($category !== null) {
+            $request->setCategory($category);
+        }
+
+        if ($name !== null) {
+            $request->setName($name);
+        }
+
+        if ($appType !== null) {
+            $request->setAppType($appType);
+        }
+
+        if ($link !== null) {
+            $request->setLink($link);
+        }
+
+        if ($limit !== null) {
+            $request->setLimit($limit);
+        }
+
+        if ($offset !== null) {
+            $request->setOffset($offset);
+        }
+
+        if ($orderBy !== null) {
+            $request->setOrderBy($orderBy);
+        }
+
+        return new GetAppsResponse($this->client->query($request));
     }
 }
