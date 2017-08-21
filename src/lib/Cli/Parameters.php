@@ -32,7 +32,7 @@ class Parameters
     const SENDERID = 'senderId';
     const RECIPIENTID = 'recipientId';
     const ID = 'id';
-    const APPLICATIONID='id';
+    const APPLICATIONID = 'id';
 
     const LIMIT = 'limit';
     const OFFSET = 'offset';
@@ -80,6 +80,8 @@ class Parameters
     const SEARCHCRITERIA = 'q';
     const INSTALLED = 'installed';
 
+    const PARAMS = 'params';
+
     public static $descriptions = [
         self::ADDRESS => "Address of account",
         self::SECRET => "Secret key of account",
@@ -124,6 +126,7 @@ class Parameters
         self::ICON => 'Link to icon file. PNG and JPG/JPEG supported. String. Optional',
         self::SEARCHCRITERIA => 'Search criteria. (String)',
         self::INSTALLED => 'Search installed apps only. 1 or 0. (Integer)',
-        self::APPLICATIONID => 'Blockchain Application id to install'
+        self::APPLICATIONID => 'Blockchain Application id to install',
+        self::PARAMS => 'dapp launch params, not required, array'
     ];
 }

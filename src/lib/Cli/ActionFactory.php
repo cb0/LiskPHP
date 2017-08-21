@@ -32,6 +32,7 @@ use Lisk\Cli\Apps\GetApp;
 use Lisk\Cli\Apps\GetApps;
 use Lisk\Cli\Apps\GetInstalledApps;
 use Lisk\Cli\Apps\InstallApp;
+use Lisk\Cli\Apps\LaunchApp;
 use Lisk\Cli\Apps\RegisterApp;
 use Lisk\Cli\Apps\SearchApps;
 use Lisk\Cli\Apps\UninstallApp;
@@ -184,6 +185,8 @@ class ActionFactory
                 return new GetAllInstalledApps();
             case 'uninstallApp':
                 return new UninstallApp();
+            case 'launchApp':
+                return new LaunchApp();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }

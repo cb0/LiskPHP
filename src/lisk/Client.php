@@ -42,6 +42,8 @@ use Lisk\Api\Apps\GetInstalledAppsRequest;
 use Lisk\Api\Apps\GetInstalledAppsResponse;
 use Lisk\Api\Apps\InstallAppRequest;
 use Lisk\Api\Apps\InstallAppResponse;
+use Lisk\Api\Apps\LaunchAppRequest;
+use Lisk\Api\Apps\LaunchAppResponse;
 use Lisk\Api\Apps\RegisterAppRequest;
 use Lisk\Api\Apps\RegisterAppResponse;
 use Lisk\Api\Apps\SearchAppsRequest;
@@ -545,5 +547,10 @@ class Client
     public function uninstallApp($id)
     {
         return new UninstallAppResponse($this->client->query(new UninstallAppRequest($id)));
+    }
+
+    public function launchApp($id, $params = [])
+    {
+        return new LaunchAppResponse($this->client->query(new LaunchAppRequest($id, $params)));
     }
 }
