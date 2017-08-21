@@ -64,6 +64,7 @@ use Lisk\Cli\Loader\BlockStatus;
 use Lisk\Cli\Loader\LoadingStatus;
 use Lisk\Cli\Loader\SynchronizationStatus;
 use Lisk\Cli\MultiSignature\CreateAccount;
+use Lisk\Cli\MultiSignature\GetAccounts;
 use Lisk\Cli\Peer\GetPeer;
 use Lisk\Cli\Peer\GetPeerList;
 use Lisk\Cli\Peer\GetPeerVersion;
@@ -205,6 +206,8 @@ class ActionFactory
             //MultiSignature
             case 'createMultiSignatureAccount':
                 return new CreateAccount();
+            case 'getMultiSignatureAccounts':
+                return new GetAccounts();
             default:
                 throw new \Exception(sprintf("Action '%s' not implemented", $actionName));
         }

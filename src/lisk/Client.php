@@ -107,6 +107,8 @@ use Lisk\Api\Loader\SynchronizationStatusRequest;
 use Lisk\Api\Loader\SynchronizationStatusResponse;
 use Lisk\Api\MultiSignature\CreateAccountRequest as CreateMultiSignatureAccountRequest;
 use Lisk\Api\MultiSignature\CreateAccountResponse as CreateMultiSignatureAccountResponse;
+use Lisk\Api\MultiSignature\GetAccountsRequest;
+use Lisk\Api\MultiSignature\GetAccountsResponse;
 use Lisk\Api\Peer\GetPeerListResponse;
 use Lisk\Api\Peer\GetPeerRequest;
 use Lisk\Api\Peer\GetPeerResponse;
@@ -599,6 +601,11 @@ class Client
                 new CreateMultiSignatureAccountRequest($secret, $lifetime, $min, $keysgroup, $secondSecret)
             )
         );
+    }
+
+    public function getMultiSignatureAccounts($publicKey)
+    {
+        return new GetAccountsResponse($this->client->query(new GetAccountsRequest($publicKey)));
     }
 
 }
