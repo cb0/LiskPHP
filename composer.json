@@ -1,14 +1,20 @@
 {
   "name": "cb0/lisk-php-api",
-  "description": "A php api for lisk",
+  "description": "A php wrapper for the lisk api.",
   "type": "library",
+  "keywords": ["php","lisk"],
+  "homepage": "https://github.com/cb0/LiskPHP",
+  "license": "GPL-3.0",
   "authors": [
     {
       "name": "Marcus Puchalla",
-      "email": "cb0@0xcb0.com"
+      "email": "cb0@0xcb0.com",
+      "homepage": "https://www.0xcb0.com",
+      "role": "Developer"
     }
   ],
   "require": {
+    "php": ">=7.0.0",
     "tcdent/php-restclient": "^0.1.6"
   },
   "require-dev": {
