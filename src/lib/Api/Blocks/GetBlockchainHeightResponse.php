@@ -28,4 +28,12 @@ class GetBlockchainHeightResponse extends AbstractResponse
     {
         $this->height = $response['height'];
     }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
 }

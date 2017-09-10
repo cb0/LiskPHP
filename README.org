@@ -31,8 +31,10 @@
 ** Installation
 
    It's a composer based package. \
-   Currently NOT available on packagist or elsewhere.\
-   I'll add the package there as soon as it's finished.
+   Installation is as easy as:
+   #+BEGIN_SRC sh
+   composer require cb0/lisk-php-api
+   #+END_SRC
 
 ** Usage:
 *** General
