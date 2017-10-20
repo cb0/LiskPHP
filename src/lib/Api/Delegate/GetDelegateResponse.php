@@ -39,9 +39,11 @@ class GetDelegateResponse extends AbstractResponse
         $del->setProducedblocks($transaction['producedblocks']);
         $del->setMissedblocks($transaction['missedblocks']);
         $del->setRate($transaction['rate']);
+        $del->setRank($transaction['rank']);
         $del->setApproval($transaction['approval']);
         $del->setProductivity($transaction['productivity']);
 
+        $this->delegate = $del;
     }
 
     /**
