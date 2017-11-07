@@ -373,7 +373,16 @@
     - *pelops* (6669300595452632273L) on MainNet
     - *pelops_testnet* (3697531586899904038L) on TestNet
 
+** Development   
+   If you want to support the development just create a pull request or fork this project.
+   I'll try to merge everything into the projects asap.
 
+*** Project Supporters
+    These people have contributed to this project:
+    - [[https://github.com/diszad/LiskPHP][diszad]] - since 10/2017
+    Thanks you very much!
+   
+   
 ** License
 
    License under GNU General Public License v3.0
