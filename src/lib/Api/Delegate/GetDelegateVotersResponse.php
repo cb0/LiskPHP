@@ -20,41 +20,34 @@
 namespace Lisk\Api\Delegate;
 
 use Lisk\AbstractResponse;
-use Lisk\Model\Delegate;
 use Lisk\Model\Voter;
+use Lisk\Model\Voters;
 
 class GetDelegateVotersResponse extends AbstractResponse
 {
+
+    /** @var Voter[] */
     private $voters;
 
     public function success($jsonResponse)
     {
-        $voters = $jsonResponse['accounts'];
-        $voterList = [];
-        foreach ($voters as $delegate) {
+        $this->voters = [];
+
+        foreach ($jsonResponse['accounts'] as $delegate) {
             $del = (new Voter($delegate['address']));
             $del->setBalance($delegate['balance'] ?? null)
                 ->setUsername($delegate['username'] ?? null)
                 ->setPublicKey($delegate['publicKey'] ?? null);
-            $delegateList[] = $del;
+            $this->voters[] = $del;
         }
-        $this->voters = $voterList;
     }
 
     /**
-     * @return mixed
+     * @return Voter[]
      */
-    public function getVoters()
+    public function getVoters(): array
     {
         return $this->voters;
-    }
-
-    /**
-     * @param mixed $voters
-     */
-    public function setVoters($voters)
-    {
-        $this->voters = $voters;
     }
 
 

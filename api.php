@@ -51,7 +51,7 @@ $options = $argumentsList;
 $factory = new \Lisk\Cli\ActionFactory();
 
 try {
-    $client = new \Lisk\Client('http://testnet.lisk.io:7000');
+    $client = new \Lisk\Client('http://node08.lisk.io');
     $action = $factory->create($actionName);
     $result = $action->call($client, $options);
     var_dump($result);

@@ -93,6 +93,7 @@ use Lisk\Api\Delegate\GetDelegateListResponse;
 use Lisk\Api\Delegate\GetDelegateRequest;
 use Lisk\Api\Delegate\GetDelegateResponse;
 use Lisk\Api\Delegate\GetDelegateVotersRequest;
+use Lisk\Api\Delegate\GetDelegateVotersResponse;
 use Lisk\Api\Delegate\GetDelegateVotesRequest;
 use Lisk\Api\Delegate\GetDelegateVotesResponse;
 use Lisk\Api\Delegate\GetForgedByAccountRequest;
@@ -405,12 +406,45 @@ class Client
         );
     }
 
+    /**
+     * @param null $publicKey
+     * @param null $username
+     * @return GetDelegateResponse
+     */
     public function getDelegate($publicKey = null, $username = null)
     {
         return new GetDelegateResponse($this->client->query(
-            new GetDelegateRequest($publicKey, $username))
+            (new GetDelegateRequest())
+                ->setUsername($username)
+                ->setPublicKey($publicKey))
         );
     }
+
+    /**
+     * @param null $publicKey
+     * @return GetDelegateResponse
+     */
+    public function getDelegateByPubKey($publicKey = null)
+    {
+        return new GetDelegateResponse($this->client->query(
+            (new GetDelegateRequest())
+                ->setPublicKey($publicKey))
+        );
+    }
+
+    /**
+     * @param null $username
+     * @return GetDelegateResponse
+     */
+    public function getDelegateByUsername($username = null)
+    {
+        return new GetDelegateResponse($this->client->query(
+            (new GetDelegateRequest())
+                ->setUsername($username))
+        );
+    }
+
+
 
     public function getDelegateList($limit = null, $offset = null, $orderBy = null)
     {
@@ -436,10 +470,13 @@ class Client
         return new GetDelegateVotesResponse($this->client->query(new GetDelegateVotesRequest($address)));
     }
 
-
+    /**
+     * @param $publicKey
+     * @return GetDelegateVotersResponse
+     */
     public function getDelegateVoters($publicKey)
     {
-        return new GetDelegateVotersRequest($this->client->query(new GetDelegateVotersRequest($publicKey)));
+        return new GetDelegateVotersResponse($this->client->query(new GetDelegateVotersRequest($publicKey)));
     }
 
     public function enableForging($secret)
@@ -452,6 +489,12 @@ class Client
         return new DisableForgingResponse($this->client->query(new DisableForgingRequest($secret)));
     }
 
+    /**
+     * @param $generatorPublicKey
+     * @param null $start
+     * @param null $end
+     * @return GetForgedByAccountResponse
+     */
     public function getForgedByAccount($generatorPublicKey, $start = null, $end = null)
     {
         return new GetForgedByAccountResponse($this->client->query(

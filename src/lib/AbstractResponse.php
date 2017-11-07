@@ -32,7 +32,7 @@ abstract class AbstractResponse
         if ($this->isSuccess()) {
             $this->success($response);
         } else {
-            throw new \Exception($response['error'] ?? "unknown error");
+            $this->error($response['error'] ?? "unknown error");
         }
 
         if ($this->success === false) {
@@ -49,6 +49,11 @@ abstract class AbstractResponse
     }
 
     public abstract function success($jsonResponse);
+
+    protected function error($errorMessage)
+    {
+        throw new \Exception($errorMessage);
+    }
 
     /**
      * @return string

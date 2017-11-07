@@ -27,13 +27,6 @@ class GetDelegateRequest extends AbstractRequest
     private $username;
     private $publicKey;
 
-    public function __construct($publicKey = null, $username = null)
-    {
-        parent::__construct();
-        $this->username = $username;
-        $this->publicKey = $publicKey;
-    }
-
     public function setEndpoint()
     {
         $this->endpoint = "/api/delegates/get";
@@ -69,10 +62,12 @@ class GetDelegateRequest extends AbstractRequest
 
     /**
      * @param null $username
+     * @return GetDelegateRequest
      */
     public function setUsername($username)
     {
         $this->username = $username;
+        return $this;
     }
 
     /**
@@ -85,9 +80,12 @@ class GetDelegateRequest extends AbstractRequest
 
     /**
      * @param null $publicKey
+     * @return GetDelegateRequest
      */
     public function setPublicKey($publicKey)
     {
         $this->publicKey = $publicKey;
+        return $this;
     }
+
 }

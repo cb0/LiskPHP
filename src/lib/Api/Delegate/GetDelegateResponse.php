@@ -21,6 +21,7 @@ namespace Lisk\Api\Delegate;
 
 use Lisk\AbstractResponse;
 use Lisk\Cli\Parameters;
+use Lisk\Exception\DelegateNotFoundException;
 use Lisk\Model\Delegate;
 
 class GetDelegateResponse extends AbstractResponse
@@ -42,10 +43,12 @@ class GetDelegateResponse extends AbstractResponse
         $del->setApproval($transaction['approval']);
         $del->setProductivity($transaction['productivity']);
 
+        $this->delegate = $del;
+
     }
 
     /**
-     * @return mixed
+     * @return Delegate
      */
     public function getDelegate()
     {
@@ -58,6 +61,15 @@ class GetDelegateResponse extends AbstractResponse
     public function setDelegate($delegate)
     {
         $this->delegate = $delegate;
+    }
+
+    protected function error($errorMessage)
+    {
+        if ($errorMessage === "Delegate not found") {
+            throw new DelegateNotFoundException($errorMessage);
+        } else {
+            parent::error($errorMessage);
+        }
     }
 
 

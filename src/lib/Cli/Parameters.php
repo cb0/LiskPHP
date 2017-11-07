@@ -47,6 +47,8 @@ class Parameters
     const IP = 'ip';
     const PORT = 'port';
 
+    const FORGED_START = 'start';
+    const FORGED_END = 'end';
 
     const TOTALFEE = 'totalFee';
     const TOTALAMOUNT = 'totalAmount';
@@ -137,6 +139,8 @@ class Parameters
         self::LIFETIME => 'request lifetime in hours (1-72). required.',
         self::MINSIGNATURES => 'minimum signatures needed to approve a tx or a change (1-16). integer. required',
         self::KEYSGROUP => '[array of public keys strings]. add \'+\' before publicKey to add an account. required. immutable.',
-        self::TRANSACTIONID => 'id of transaction to sign. REQUIRED'
+        self::TRANSACTIONID => 'id of transaction to sign. REQUIRED',
+        self::FORGED_START => 'Sets the start time of the search - timestamp UNIX time. (String)',
+        self::FORGED_END => 'Sets the endtime of the search - timestamp UNIX time. (String)'
     ];
 }

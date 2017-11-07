@@ -31,9 +31,9 @@ class GetForgedByAccountRequest extends AbstractRequest
     public function __construct($generatorPublicKey, $start = null, $end = null)
     {
         parent::__construct();
-        $this->generatorPublicKey=$generatorPublicKey;
-        $this->start=$start;
-        $this->end=$end;
+        $this->generatorPublicKey = $generatorPublicKey;
+        $this->start = $start;
+        $this->end = $end;
     }
 
     public function setEndpoint()
@@ -47,6 +47,13 @@ class GetForgedByAccountRequest extends AbstractRequest
             Parameters::GENERATORPUBLICKEY => $this->generatorPublicKey
         ];
 
+        if ($this->start !== null) {
+            $payload[Parameters::FORGED_START] = $this->start;
+        }
+        if ($this->end !== null) {
+            $payload[Parameters::FORGED_END] = $this->end;
+        }
+
         return $payload;
     }
 
@@ -54,7 +61,6 @@ class GetForgedByAccountRequest extends AbstractRequest
     {
         $this->type = self::GET;
     }
-
 
 
 }

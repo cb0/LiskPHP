@@ -16,25 +16,11 @@
  * You should have received a copy of the GNU General Public License
  * along with LiskPhp.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Lisk\Api\Blocks;
 
-use Lisk\AbstractResponse;
+namespace Lisk\Exception;
 
-class GetBlockchainFeeResponse extends AbstractResponse
+
+class DelegateNotFoundException extends \Exception
 {
-    protected $fee;
-
-    public function success($jsonResponse)
-    {
-        $this->fee = $jsonResponse['fee'];
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFee()
-    {
-        return $this->fee;
-    }
 
 }

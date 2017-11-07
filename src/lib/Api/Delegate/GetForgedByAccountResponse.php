@@ -20,70 +20,60 @@
 namespace Lisk\Api\Delegate;
 
 use Lisk\AbstractResponse;
-use Lisk\Model\Delegate;
 
 class GetForgedByAccountResponse extends AbstractResponse
 {
+    /** @var int Fees */
     private $fees;
+
+    /** @var int */
     private $rewards;
+
+    /** @var int */
     private $forged;
 
+    /** @var int */
+    private $count;
 
     public function success($jsonResponse)
     {
-        $this->fees = $jsonResponse['fees'];
-        $this->rewards = $jsonResponse['rewards'];
-        $this->forged = $jsonResponse['forged'];
+        $this->fees = intval($jsonResponse['fees']);
+        $this->rewards = intval($jsonResponse['rewards']);
+        $this->forged = intval($jsonResponse['forged']);
+        $this->count = intval($jsonResponse['count']);
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getFees()
+    public function getFees(): int
     {
         return $this->fees;
     }
 
     /**
-     * @param mixed $fees
+     * @return int
      */
-    public function setFees($fees)
-    {
-        $this->fees = $fees;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRewards()
+    public function getRewards(): int
     {
         return $this->rewards;
     }
 
     /**
-     * @param mixed $rewards
+     * @return int
      */
-    public function setRewards($rewards)
-    {
-        $this->rewards = $rewards;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getForged()
+    public function getForged(): int
     {
         return $this->forged;
     }
 
     /**
-     * @param mixed $forged
+     * @return int
      */
-    public function setForged($forged)
+    public function getCount(): int
     {
-        $this->forged = $forged;
+        return $this->count;
     }
-
 
 
 }
