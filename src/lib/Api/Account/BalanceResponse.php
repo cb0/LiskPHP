@@ -27,8 +27,8 @@ class BalanceResponse extends AbstractResponse
 
     public function success($jsonResponse)
     {
-        $this->balance = $jsonResponse['balance'];
-        $this->unconfirmedBalance = $jsonResponse['unconfirmedBalance'];
+        $this->balance = intval($jsonResponse['balance']);
+        $this->unconfirmedBalance = intval($jsonResponse['unconfirmedBalance']);
     }
 
     /**
