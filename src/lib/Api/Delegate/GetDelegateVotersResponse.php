@@ -35,7 +35,7 @@ class GetDelegateVotersResponse extends AbstractResponse
 
         foreach ($jsonResponse['accounts'] as $delegate) {
             $del = (new Voter($delegate['address']));
-            $del->setBalance($delegate['balance'] ?? null)
+            $del->setBalance(intval($delegate['balance']) ?? null)
                 ->setUsername($delegate['username'] ?? null)
                 ->setPublicKey($delegate['publicKey'] ?? null);
             $this->voters[] = $del;
