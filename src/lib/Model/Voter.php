@@ -44,7 +44,7 @@ class Voter extends Account
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getBalance()
     {
